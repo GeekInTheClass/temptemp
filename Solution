@@ -1,0 +1,53 @@
+//solve 1
+
+let stringArray = ["i can do it", "just do it", "that's way to go"]
+var modifyArray : [String] = []
+/*  반복문
+ for str in stringArray{
+ let tmp = str + "."
+ modifyArray.append(tmp)
+ }*/
+//을 클로져로
+modifyArray = stringArray.map{$0+"."};
+print(modifyArray);
+
+//solve 2
+let Intarray = [1,2,3,4,5,6,7,8,9,10]
+
+let mod3: [Int] = Intarray.filter{$0 % 3 == 0}
+print(mod3)
+
+// solve 3
+
+let pieces: Array<String> = ["#include", "'stdio.h'", "int", "main(void)", "{", "return", "0;", "}"]
+/* 이 반복문을
+ var result: String = ""
+ for code in pieces {
+ result = result + code + " "
+ }
+ */
+// 클로져로
+let result : String = pieces.reduce(""){$0+$1+" "};
+print(result)
+
+
+//solve 4
+let arr: Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8]
+
+let result: [Int] = arr.filter{$0 % 2 == 0}
+print(result)
+
+// solve 5
+var pieces: Array<String> = ["#include", "'stdio.h'", "int", "main(void)", "{", "return", "0;", "}"]
+
+print(pieces)
+/* 이 반복문을
+ pieces.sort()
+ var copy: Array<String> = []
+ for code in pieces {
+ copy += [code]
+ }
+ */
+// 클로져로
+let copy = pieces.sorted { $0 < $1 }
+print(copy)
